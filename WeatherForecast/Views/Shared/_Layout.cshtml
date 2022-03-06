@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WeatherForecast</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/WeatherForecast.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/font-awesome/css/all.css" asp-append-version="true" />
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+</head>
+<body>
+    <header>
+        <!------ Include the above in your HEAD tag ---------->
+
+        <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Weather Forecast</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" asp-area="" asp-controller="WeatherForecast" asp-action="SearchByCity">
+                            <i class="fa fa-home"></i>
+                            Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    @* <li class="nav-item">
+                        <a class="nav-link" href="#">
+                        <i class="fa fa-envelope-o">
+                        <span class="badge badge-danger">11</span>
+                        </i>
+                        Link
+                        </a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" href="#">
+                        <i class="fa fa-envelope-o">
+                        <span class="badge badge-warning">11</span>
+                        </i>
+                        Disabled
+                        </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-envelope-o">
+                        <span class="badge badge-primary">11</span>
+                        </i>
+                        Dropdown
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        </li>*@
+                </ul>
+                @*                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">
+                    <i class="fa fa-bell">
+                    <span class="badge badge-info">11</span>
+                    </i>
+                    Test
+                    </a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link" href="#">
+                    <i class="fa fa-globe">
+                    <span class="badge badge-success">11</span>
+                    </i>
+                    Test
+                    </a>
+                    </li>
+                    </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>*@
+            </div>
+        </nav>
+
+        @*<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WeatherForecast</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </li>
+            </ul>
+            </div>
+            </div>
+            </nav>*@
+    
+        </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3 mt-10">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <!--- Footer --->
+    <footer>
+        <div class="jumbotron jumbotron-fluid bg-secondary p-4 mt-5 mb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 cizgi">
+                        <div class="card bg-secondary border-0">
+                            <div class="card-body text-light text-center">
+                                <h5 class="card-title text-white display-4" style="font-size:30px">Copy rights</h5>
+                                <p class="d-inline lead">
+                                    All rights reserved © @DateTime.UtcNow.Year<br>
+                                    <a href="#" class="text-light d-block lead">Weather Forecast</a>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 cizgi">
+                        <div class="card bg-secondary border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-white display-4" style="font-size:30px">Communiction</h5>
+                                <a class="text-light d-block lead" style="margin-left: -20px" href="#"><i class="fa fa-phone mr-2"></i>+90 (000) 000 0 000</a>
+                                <a class="text-light d-block lead" href="#"><i class="fa fa-envelope mr-2"></i>admin@localhost.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                        <div class="card bg-secondary border-0">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-white display-4" style="font-size:30px">Social Media</h5>
+
+                                <a class="text-light" href="#"><i style="font-size:25px; margin-right:5%" class="fa-brands fa-facebook"></i></a>
+
+                                <a class="text-light" href="#"><i style="font-size:25px; margin-right:5%" class="fa-brands fa-twitter"></i></a>
+
+                                <a class="text-light" href="#"><i style="font-size:25px; margin-right:5%" class="fa-brands fa-instagram"></i></a>
+
+                                <a class="text-light" href="#"><i style="font-size:25px; margin-right:5%" class="fa-brands fa-linkedin"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--# Footer #-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="~/lib/font-awesome/js/all.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
